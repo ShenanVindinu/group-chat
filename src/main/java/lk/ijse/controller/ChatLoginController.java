@@ -1,7 +1,6 @@
 package lk.ijse.controller;
 
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,6 +28,8 @@ public class ChatLoginController {
     DataOutputStream dataOutputStream;
     Stage stage;
     double x, y = 0;
+    public static String currentUserName;
+
 
 
     @FXML
@@ -37,6 +38,7 @@ public class ChatLoginController {
             socket = new Socket("localhost", 3991);
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
             dataOutputStream.writeUTF("/usrLog//!-> "+ userNameTextField.getText());
+            currentUserName = userNameTextField.getText();
             dataOutputStream.flush();
             Parent anchorPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/chat_form.fxml")));
             anchorPane.setOnMousePressed(event -> { x = event.getSceneX();y = event.getSceneY(); });
@@ -56,7 +58,7 @@ public class ChatLoginController {
     }
 
     public static void clsStg() throws IOException {
-        if (socket!=null){
+        if (socket != null){
             socket.close();
         }
     }
