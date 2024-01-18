@@ -12,30 +12,40 @@
 
 <AnchorPane prefHeight="558.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ChatFormController">
    <children>
-      <TextField fx:id="massageBox" layoutX="49.0" layoutY="470.0" prefHeight="38.0" prefWidth="211.0" promptText="Enter Massage" />
-      <Button fx:id="sendButton" layoutX="338.0" layoutY="464.0" mnemonicParsing="false" onAction="#sendMassage" prefHeight="50.0" prefWidth="86.0" style="-fx-background-color: #FECE02;" text="Send">
-         <font>
-            <Font name="Josefin Sans Regular" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="imageButton" layoutX="272.0" layoutY="464.0" mnemonicParsing="false" onAction="#sendImage" prefHeight="23.0" prefWidth="54.0" text="📷">
-         <font>
-            <Font name="System Bold" size="23.0" />
-         </font>
-      </Button>
-      <ScrollPane fx:id="ScrollPane" layoutX="50.0" layoutY="99.0" prefHeight="357.0" prefWidth="354.0">
-         <content>
-            <VBox fx:id="vBox" prefHeight="355.0" prefWidth="352.0" />
-         </content></ScrollPane>
-      <ImageView fitHeight="68.0" fitWidth="116.0" layoutX="50.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="68.0" fitWidth="116.0" layoutX="50.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/8150830.png" />
          </image>
       </ImageView>
-      <Text fx:id="userNameText" layoutX="299.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="100.60002517700195">
+      <TextField fx:id="massageBox" layoutX="50.0" layoutY="495.0" prefHeight="38.0" prefWidth="211.0" promptText="Enter Massage" />
+      <Button fx:id="sendButton" layoutX="338.0" layoutY="489.0" mnemonicParsing="false" onAction="#sendMassage" prefHeight="50.0" prefWidth="86.0" style="-fx-background-color: #FECE02;" text="Send">
+         <font>
+            <Font name="Josefin Sans Regular" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="imageButton" layoutX="272.0" layoutY="489.0" mnemonicParsing="false" onAction="#sendImage" prefHeight="23.0" prefWidth="54.0" text="📷">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Button>
+      <ScrollPane fx:id="scrollPane" layoutX="50.0" layoutY="99.0" onMouseEntered="#scrlOnMouseEntered" onMouseExited="#scrlOnMouseExited" prefHeight="368.0" prefWidth="354.0">
+         <content>
+            <VBox fx:id="vBox" prefHeight="366.0" prefWidth="352.0" />
+         </content></ScrollPane>
+      <Text fx:id="userNameText" layoutX="305.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="100.60002517700195">
          <font>
             <Font name="Josefin Sans Regular" size="24.0" />
          </font>
       </Text>
+      <Button fx:id="clsButton" layoutX="406.0" layoutY="14.0" mnemonicParsing="false" onAction="#clsOnActon" style="-fx-background-color: #FF0000;" text="x">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="minimizeButton" layoutX="363.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimizeOnAction" style="-fx-background-color: #FECE02;" text="-">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

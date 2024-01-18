@@ -28,17 +28,22 @@ public class ChatLoginController {
     static Socket socket;
     DataOutputStream dataOutputStream;
     Stage stage;
+    double x, y = 0;
 
 
     @FXML
-    void enterChat(ActionEvent event) throws IOException {
+    void enterChat() throws IOException {
 
             socket = new Socket("localhost", 3991);
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
             dataOutputStream.writeUTF("/usrLog//!-> "+ userNameTextField.getText());
             dataOutputStream.flush();
             Parent anchorPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/chat_form.fxml")));
-
+            anchorPane.setOnMousePressed(event -> { x = event.getSceneX();y = event.getSceneY(); });
+            anchorPane.setOnMouseDragged(event -> {
+            stage.setX(event.getScreenX() - x);
+            stage.setY(event.getScreenY() - y);
+            });
 
             stage = new Stage();
             stage.setScene(new Scene(anchorPane));
