@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 public class ChatFormController {
 
@@ -19,6 +21,12 @@ public class ChatFormController {
 
     @FXML
     private Button sendButton;
+
+    @FXML
+    private Text userNameText;
+
+    @FXML
+    private VBox vBox;
 
     @FXML
     void sendImage(ActionEvent event) {
