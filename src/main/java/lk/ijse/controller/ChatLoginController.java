@@ -50,4 +50,10 @@ public class ChatLoginController {
             userNameTextField.setText("");
     }
 
+    public static void clsStg() throws IOException {
+        if (socket!=null){
+            socket.close();
+        }
+    }
+
 }
