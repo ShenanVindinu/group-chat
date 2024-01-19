@@ -28,7 +28,7 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Button>
-      <ScrollPane fx:id="scrollPane" layoutX="50.0" layoutY="99.0" onMouseEntered="#scrlOnMouseEntered" onMouseExited="#scrlOnMouseExited" prefHeight="368.0" prefWidth="354.0">
+      <ScrollPane fx:id="scrollPane" layoutX="42.0" layoutY="95.0" onMouseEntered="#scrlOnMouseEntered" onMouseExited="#scrlOnMouseExited" prefHeight="368.0" prefWidth="370.0">
          <content>
             <VBox fx:id="vBox" prefHeight="366.0" prefWidth="352.0" />
          </content></ScrollPane>
