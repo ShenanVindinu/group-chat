@@ -116,8 +116,17 @@ public class ChatFormController implements Initializable {
     }
 
     @FXML
-    void sendMassage(ActionEvent event) {
+    void sendMassage(ActionEvent event) throws IOException {
+        dataOutputStream.writeUTF(userNameText.getText() + " " + massageBox.getText());
+        dataOutputStream.flush();
+        massageBox.setText("");
+    }
 
+    @FXML
+    void massagetxtOnAction(ActionEvent event) throws IOException {
+        dataOutputStream.writeUTF(userNameText.getText() + " " + massageBox.getText());
+        dataOutputStream.flush();
+        massageBox.setText("");
     }
 
     private void massage() {
@@ -191,7 +200,7 @@ public class ChatFormController implements Initializable {
 
                             Text text = new Text(preparedMsg);
                             TextFlow textFlow = new TextFlow(text);
-                            textFlow.setStyle("-fx-background-color: #0693e3; -fx-font-weight: bold; -fx-color: white; -fx-background-radius: 20px");
+                            textFlow.setStyle("-fx-background-color: #fece02; -fx-font-weight: bold; -fx-color: white; -fx-background-radius: 20px");
                             textFlow.setPadding(new Insets(5, 10, 5, 10));
                             text.setFill(Color.color(1, 1, 1));
 

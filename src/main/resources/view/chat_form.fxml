@@ -17,7 +17,7 @@
             <Image url="@../assets/8150830.png" />
          </image>
       </ImageView>
-      <TextField fx:id="massageBox" layoutX="50.0" layoutY="495.0" prefHeight="38.0" prefWidth="211.0" promptText="Enter Massage" />
+      <TextField fx:id="massageBox" layoutX="50.0" layoutY="495.0" onAction="#massagetxtOnAction" prefHeight="38.0" prefWidth="211.0" promptText="Enter Massage" />
       <Button fx:id="sendButton" layoutX="338.0" layoutY="489.0" mnemonicParsing="false" onAction="#sendMassage" prefHeight="50.0" prefWidth="86.0" style="-fx-background-color: #FECE02;" text="Send">
          <font>
             <Font name="Josefin Sans Regular" size="20.0" />
