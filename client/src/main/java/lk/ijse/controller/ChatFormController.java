@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -83,11 +84,13 @@ public class ChatFormController implements Initializable {
     void clsOnActon(ActionEvent event) throws IOException {
         dataOutputStream.writeUTF("/usrLogOut//!-> "+userNameText.getText());
         dataOutputStream.flush();
+        closeChatWindow();
     }
 
     @FXML
     void minimizeOnAction(ActionEvent event) {
-
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 
     @FXML
@@ -246,6 +249,23 @@ public class ChatFormController implements Initializable {
 
     private void setName() {
         userNameText.setText(ChatLoginController.currentUserName);
+    }
+
+    private void closeChatWindow() {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) clsButton.getScene().getWindow();
+            try {
+                dataOutputStream.writeUTF( userNameText.getText().toString() + " Logged Out");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                dataOutputStream.flush();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage.close();
+        });
     }
 
 

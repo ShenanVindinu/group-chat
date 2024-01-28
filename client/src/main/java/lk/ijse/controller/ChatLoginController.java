@@ -1,6 +1,7 @@
 package lk.ijse.controller;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -55,6 +56,11 @@ public class ChatLoginController {
             stage.show();
 
             userNameTextField.setText("");
+    }
+
+    @FXML
+    void OpenChatOnAction(ActionEvent event) throws IOException {
+        enterChat();
     }
 
     public static void clsStg() throws IOException {
