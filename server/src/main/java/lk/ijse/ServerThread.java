@@ -11,9 +11,11 @@ public class ServerThread extends Thread {
     private DataInputStream dataInputStream;
     private DataOutputStream dataOutputStream;
     private String message;
+
     {
         message="";
     }
+
     public ServerThread(Socket socket, ArrayList<ServerThread> threads) {
         this.socket = socket;
         this.threadList = threads;
@@ -22,6 +24,7 @@ public class ServerThread extends Thread {
     @Override
     public void run() {
         try {
+
             dataInputStream = new DataInputStream(socket.getInputStream());
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
@@ -50,7 +53,7 @@ public class ServerThread extends Thread {
             }
 
         } catch (Exception e) {
-            System.out.println("Error occured " +e.getStackTrace());
+            System.out.println("Error occured " + e.getStackTrace());
         } finally {
             System.out.println("server thread");
         }

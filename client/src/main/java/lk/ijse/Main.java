@@ -21,12 +21,16 @@ public class Main extends Application {
         stage.setScene(new Scene(parent));
         stage.setResizable(false);
         stage.setOnCloseRequest(windowEvent -> {
+
             try {
                 ChatLoginController.clsStg();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
         });
+
         stage.show();
+
     }
 }

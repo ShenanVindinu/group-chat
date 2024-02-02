@@ -41,7 +41,10 @@ public class ChatLoginController {
             dataOutputStream.writeUTF("/usrLog//!-> "+ userNameTextField.getText());
             currentUserName = userNameTextField.getText();
             dataOutputStream.flush();
+
             Parent anchorPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/chat_form.fxml")));
+
+            //AnchorPane Movements
             anchorPane.setOnMousePressed(event -> { x = event.getSceneX();y = event.getSceneY(); });
             anchorPane.setOnMouseDragged(event -> {
             stage.setX(event.getScreenX() - x);
@@ -64,9 +67,11 @@ public class ChatLoginController {
     }
 
     public static void clsStg() throws IOException {
+
         if (socket != null){
             socket.close();
         }
+
     }
 
 }
